@@ -1,0 +1,18 @@
+apiversion: v1
+kind: replicationcontroller
+metadata:
+  name: hello-rc
+spec:
+  replicas: 2
+  selector:
+    app: nginx
+  ttemplate:
+    metadata:
+      labels:
+        app: nginx
+  spec: 
+    containers:
+    - name: hello-world
+      image: nginx
+      ports: 
+      - containerport: 80
